@@ -22,7 +22,6 @@ jobs:
 
       - name: Install and Build Vue Project
         run: |
-          cd prototype
           npm ci
           npm run build
 
