@@ -28,5 +28,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: prototype/dist # Cible précisément le dossier compilé du sous-répertoire
+          folder: dist # Cible précisément le dossier compilé du sous-répertoire
           branch: gh-pages # Pousse proprement sur cette branche dédiée
