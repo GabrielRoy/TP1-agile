@@ -1,0 +1,32 @@
+@import './base.css';
+
+#app {
+  min-height: 100vh;
+}
+
+.app-shell { min-height: 100vh; }
+.app-header { align-items: center; background: var(--ink); border-bottom: 1px solid #354640; display: flex; gap: 2rem; height: 76px; justify-content: space-between; padding: 0 clamp(1.25rem, 5vw, 5rem); position: sticky; top: 0; z-index: 10; }
+.brand { align-items: center; color: #ffffff; display: flex; font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; gap: .65rem; }
+.brand-mark { background: var(--coral); border-radius: 8px 8px 8px 2px; color: white; display: grid; font-family: Arial, sans-serif; height: 32px; place-items: center; transform: rotate(-7deg); width: 32px; }
+.brand-accent { color: var(--yellow); }
+.main-nav { align-items: center; display: flex; gap: 1.75rem; margin-left: auto; }
+.main-nav a { color: #c8d4ce; font-size: .88rem; font-weight: 700; }
+.main-nav a.router-link-active { color: #ffffff; }
+.nav-action { background: var(--coral); border-radius: 6px; color: #ffffff !important; padding: .7rem 1rem; }
+.nav-action span { color: var(--yellow); font-size: 1.1rem; margin-left: .35rem; }
+.profile-button { align-items: center; background: transparent; border: 0; color: #ffffff; cursor: pointer; display: flex; gap: .65rem; padding: 0; text-align: left; }
+.avatar { align-items: center; background: var(--yellow); border-radius: 50%; display: flex; font-weight: 800; height: 34px; justify-content: center; width: 34px; }
+.profile-copy { display: flex; flex-direction: column; line-height: 1.15; }
+.profile-copy strong { font-size: .78rem; }
+.profile-copy small { color: #c8d4ce; font-size: .68rem; }
+.chevron { color: #c8d4ce; font-size: 1.1rem; }
+.main-content { margin: 0 auto; max-width: 1180px; min-height: calc(100vh - 76px); padding: 3.75rem clamp(1.25rem, 5vw, 5rem) 5rem; width: 100%; }
+
+@media (max-width: 680px) {
+  .app-header { gap: .75rem; height: 68px; padding: 0 1rem; }
+  .brand { font-size: 1.05rem; }
+  .main-nav { gap: .5rem; }
+  .main-nav > a:first-child, .profile-copy, .chevron { display: none; }
+  .nav-action { padding: .6rem .7rem; }
+  .main-content { min-height: calc(100vh - 68px); padding: 2.5rem 1rem 3rem; }
+}
