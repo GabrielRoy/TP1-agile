@@ -1,0 +1,33 @@
+name: Deploy Vue App
+
+on:
+  push:
+    branches:
+      - main # Déclenche le déploiement dès que vous poussez sur dev
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install and Build Vue Project
+        run: |
+          cd prototype
+          npm ci
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: prototype/dist # Cible précisément le dossier compilé du sous-répertoire
+          branch: gh-pages # Pousse proprement sur cette branche dédiée
